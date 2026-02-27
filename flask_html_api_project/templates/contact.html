@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+</head>
+<body style="font-family: Arial; margin:0;">
+
+<!-- Navbar -->
+<div style="background:#2c3e50; padding:15px;">
+    <a href="/" style="color:white; margin-right:20px;">Home</a>
+    <a href="/contact" style="color:white;">Contact</a>
+</div>
+
+<div style="padding:40px;">
+
+    <h1>📩 Contact Page</h1>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Enter Name"><br><br>
+        <input type="email" name="email" placeholder="Enter Email"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if message %}
+        <p style="color:green;">{{ message }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
