@@ -8,7 +8,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# DATA_FILE = "data.json"
+
 DATA_FILE = os.getenv("DATA_FILE")
 
 
