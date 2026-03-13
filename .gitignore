@@ -6,3 +6,7 @@ __pycache__/
 *.pyc
 
 .venv/
+
+abc.py
+
+requirements.txt
