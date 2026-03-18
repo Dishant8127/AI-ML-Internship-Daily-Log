@@ -8,5 +8,5 @@ __pycache__/
 .venv/
 
 abc.py
-
+venv/
 requirements.txt
