@@ -1,9 +1,13 @@
 from flask import Flask
 from routes import upload_docs, start_session, ask_session, clear_session, get_sessions, get_history, delete_session
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+secret_key = os.getenv("secret_key")
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
+app.secret_key = secret_key
 
 os.makedirs("data", exist_ok=True)
 os.makedirs("data/docs", exist_ok=True)
