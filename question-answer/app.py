@@ -54,7 +54,7 @@ def ask():
         context_chunks.append(item["text"])
     
 
-    context = " ".join(context_chunks).strip()
+    context = " ".join(context_chunks[:2]).strip()
 
     if not context:
         return {"error": "Context is empty"}, 500
