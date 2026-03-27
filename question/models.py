@@ -4,31 +4,41 @@ import google.generativeai as genai
 
 load_dotenv()
 
-genai.configure(api_key = os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-gemini_model = genai.GenerativeModel("gemini-2.5-flash")
+gemini_model = genai.GenerativeModel(
+    "gemini-2.5-flash",
+    generation_config={"temperature": 0.0}
+)
+
 
 def generate_answer(question, context):
     prompt = f"""
-    Extract the exact answer from the context.
+Answer the question using ONLY the provided context.
 
-    Do NOT explain.
-    Do NOT add examples.
-    Do NOT add extra sentences.
+Rules:
+- Do NOT use outside knowledge
+- Keep the answer short and precise
+- You MAY rephrase slightly for clarity
+- Do NOT add extra information
 
-    Context:
-    {context}
+Context:
+{context}
 
-    Question:
-    {question}
+Question:
+{question}
 
-    Answer:
-    """
+Answer:
+"""
 
     response = gemini_model.generate_content(prompt)
 
-    return response.text    
+    return response.text.strip()
+
 
 def get_embedding(text):
-    response = genai.embed_content(model = "gemini-embedding-001" , content = text )
+    response = genai.embed_content(
+        model="gemini-embedding-001",
+        content=text
+    )
     return response["embedding"]

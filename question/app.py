@@ -1,7 +1,8 @@
+
 from flask import Flask, request, jsonify
 import os
 from dotenv import load_dotenv
-from utils import chunk_text, extract_text, retrieve_top_k
+from utils import chunk_text, extract_text, retrieve_top_k, clean_text
 from models import get_embedding, generate_answer
 from vector_store import add_to_store, get_store
 
@@ -13,7 +14,6 @@ UPLOAD_FOLDER = "data/docs"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 
-# 🔹 Upload Files
 @app.route("/upload", methods=["POST"])
 def upload_files():
     files = request.files.getlist("files")
@@ -22,7 +22,9 @@ def upload_files():
         path = os.path.join(UPLOAD_FOLDER, file.filename)
         file.save(path)
 
-        text = extract_text(path)
+        raw_text = extract_text(path)
+        text = clean_text(raw_text)
+
         chunks = chunk_text(text)
 
         for chunk in chunks:
@@ -31,11 +33,12 @@ def upload_files():
 
     return jsonify({"message": "Files processed successfully"})
 
-
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.json
     question = data.get("question")
+
+    print("\nQuery:", question)
 
     store = get_store()
 
@@ -44,23 +47,22 @@ def ask():
 
     top_chunks = retrieve_top_k(question, store, k=3)
 
-    print("\n===== Top 3 Retrieved Chunks =====")
+    print("\n===== Top Retrieved Chunks =====")
     for i, (score, chunk) in enumerate(top_chunks, 1):
         print(f"\nRank {i}")
         print(f"Score: {score}")
         print(f"Chunk: {chunk[:200]}")
 
-
-    context = "\n\n".join([chunk for _, chunk in top_chunks])
+    best_chunk = top_chunks[0][1]
     best_score = top_chunks[0][0]
-    answer = generate_answer(question, context)
+
+    answer = generate_answer(question, best_chunk)
 
     return jsonify({
-        # "question": question,
         "answer": answer,
-        "score" : best_score
+        "score": best_score,
+        "source": best_chunk[:200]
     })
-
 
 
 if __name__ == "__main__":
