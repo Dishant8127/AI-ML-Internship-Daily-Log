@@ -1,0 +1,40 @@
+2026-04-06 12:18:42,624 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-06 12:18:42,627 - [33mPress CTRL+C to quit[0m
+2026-04-06 12:18:42,638 -  * Restarting with watchdog (windowsapi)
+2026-04-06 12:18:43,105 -  * Debugger is active!
+2026-04-06 12:18:43,108 -  * Debugger PIN: 135-420-949
+2026-04-06 12:18:48,058 - Endpoint: /generate-text | Input: Write a short story about AI
+2026-04-06 12:18:56,850 - 127.0.0.1 - - [06/Apr/2026 12:18:56] "POST /generate-text HTTP/1.1" 200 -
+2026-04-06 12:19:33,187 -  * Detected change in 'E:\\AI-ML-Internship-Daily-Log\\flask-ai-api\\app.py', reloading
+2026-04-06 12:19:33,253 -  * Restarting with watchdog (windowsapi)
+2026-04-06 12:19:33,812 -  * Debugger is active!
+2026-04-06 12:19:33,815 -  * Debugger PIN: 135-420-949
+2026-04-06 12:20:18,145 -  * Detected change in 'E:\\AI-ML-Internship-Daily-Log\\venv\\Lib\\site-packages\\requests\\__init__.py', reloading
+2026-04-06 12:20:18,215 -  * Restarting with watchdog (windowsapi)
+2026-04-06 12:20:18,748 -  * Debugger is active!
+2026-04-06 12:20:18,748 -  * Debugger PIN: 135-420-949
+2026-04-06 17:22:26,312 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-06 17:22:26,312 - [33mPress CTRL+C to quit[0m
+2026-04-06 17:22:26,337 -  * Restarting with watchdog (windowsapi)
+2026-04-06 17:22:26,811 -  * Debugger is active!
+2026-04-06 17:22:26,817 -  * Debugger PIN: 135-420-949
+2026-04-06 17:22:29,898 -  * Detected change in 'E:\\AI-ML-Internship-Daily-Log\\flask-ai-api\\logger.py', reloading
+2026-04-06 17:22:29,996 -  * Restarting with watchdog (windowsapi)
+2026-04-06 17:22:30,543 -  * Debugger is active!
+2026-04-06 17:22:30,556 -  * Debugger PIN: 135-420-949
+2026-04-06 17:22:31,398 -  * Detected change in 'E:\\AI-ML-Internship-Daily-Log\\flask-ai-api\\models.py', reloading
+2026-04-06 17:22:31,472 -  * Restarting with watchdog (windowsapi)
+2026-04-06 17:22:32,056 -  * Debugger is active!
+2026-04-06 17:22:32,060 -  * Debugger PIN: 135-420-949
+2026-04-06 17:23:16,583 - Endpoint: /generate-text | Input: Write a short story about AI
+2026-04-06 17:23:26,870 - 127.0.0.1 - - [06/Apr/2026 17:23:26] "POST /generate-text HTTP/1.1" 200 -
+2026-04-06 17:23:38,493 -  * Detected change in 'E:\\AI-ML-Internship-Daily-Log\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2026-04-06 17:23:38,571 -  * Restarting with watchdog (windowsapi)
+2026-04-06 17:23:39,335 -  * Debugger is active!
+2026-04-06 17:23:39,335 -  * Debugger PIN: 135-420-949
+2026-04-06 17:24:44,652 - Endpoint: /summarize | Input: Artificial Intelligence is transforming industries by automating tasks and improving efficiency...
+2026-04-06 17:24:45,624 - 127.0.0.1 - - [06/Apr/2026 17:24:45] "POST /summarize HTTP/1.1" 200 -
+2026-04-06 17:25:09,770 - Endpoint: /analyze-prompt | Input: I want to buy a laptop
+2026-04-06 17:25:09,771 - 127.0.0.1 - - [06/Apr/2026 17:25:09] "POST /analyze-prompt HTTP/1.1" 200 -
