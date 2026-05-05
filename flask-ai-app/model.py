@@ -20,8 +20,8 @@ Rules:
 - Avoid unnecessary repetition
 
 Prompt:
-{prompt}
 """
+{prompt}
 
         response = model.generate_content(full_prompt)
         return response.text.strip()
