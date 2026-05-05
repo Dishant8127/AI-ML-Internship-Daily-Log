@@ -1,78 +1,57 @@
-import google.generativeai as genai
+from google import genai
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 expenses = []
 
-def add_expense(amount, category):
+def add_expense(amount: float, category: str):
+
     expenses.append({"amount": amount, "category": category})
-    
+
     total = sum(item["amount"] for item in expenses)
-    
+
     return f"{amount} INR added to {category}. Total expense: {total} INR."
 
-tools = [
-    {
-        "function_declarations": [
-            {
-                "name": "add_expense",
-                "description": "Add a daily expense with category",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "amount": {
-                            "type": "number",
-                            "description": "Expense amount"
-                        },
-                        "category": {
-                            "type": "string",
-                            "description": "Expense category like food, travel, shopping"
-                        }
-                    },
-                    "required": ["amount", "category"]
-                }
-            }
-        ]
-    }
-]
-
-model = genai.GenerativeModel(
-    model_name="gemini-2.5-flash",
-    tools=tools
-)
+tools = [add_expense]
 
 user_input = "Today I spent 500 on food"
+# user_input = input("Enter your expense: ")
 
-response = model.generate_content(user_input)
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=user_input,
+    config={
+        "tools": tools
+    }
+)
 
 part = response.candidates[0].content.parts[0]
 
-if hasattr(part, "function_call"):
-    function_call = part.function_call
-    
-    function_name = function_call.name
-    args = function_call.args
+if hasattr(part, "function_call") and part.function_call:
+    fc = part.function_call
 
-    if function_name == "add_expense":
-        result = add_expense(args["amount"], args["category"])
+    result = add_expense(fc.args["amount"], fc.args["category"])
 
-        final_response = model.generate_content([
+    final_response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=[
             user_input,
             {
                 "function_response": {
-                    "name": function_name,
+                    "name": fc.name,
                     "response": {
                         "result": result
                     }
                 }
             }
-        ])
+        ]
+    )
 
-        print(final_response.text)
+    print(final_response.text)
 
 else:
     print(response.text)
