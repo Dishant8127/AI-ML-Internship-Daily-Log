@@ -17,3 +17,6 @@ session_id.txt
 data/
 
 data.txt
+
+image-similarity-search/images
+image-similarity-search/uploads
