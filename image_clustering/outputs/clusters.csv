@@ -1,0 +1,11 @@
+cluster_id,num_images,sample_images
+4,33,"dataset\9376.jpg, dataset\9404.jpg, dataset\9437.jpg, dataset\9438.jpg, dataset\9439.jpg"
+7,14,"dataset\9377.jpg, dataset\9378.jpg, dataset\9379.jpg, dataset\9408.jpg, dataset\9409.jpg"
+3,29,"dataset\9380.jpg, dataset\9381.jpg, dataset\9382.jpg, dataset\9383.jpg, dataset\9384.jpg"
+6,29,"dataset\9389.jpg, dataset\9428.jpg, dataset\9430.jpg, dataset\9431.jpg, dataset\9432.jpg"
+8,77,"dataset\9406.jpg, dataset\9511.jpg, dataset\9512.jpg, dataset\9528.jpg, dataset\9539.jpg"
+0,74,"dataset\9415.jpg, dataset\9416.jpg, dataset\9417.jpg, dataset\9418.jpg, dataset\9419.jpg"
+5,86,"dataset\9424.jpg, dataset\9425.jpg, dataset\9426.jpg, dataset\9427.jpg, dataset\9445.jpg"
+1,32,"dataset\9442.jpg, dataset\9444.jpg, dataset\9485.jpg, dataset\9577.jpg, dataset\9578.jpg"
+2,70,"dataset\9508.jpg, dataset\9509.jpg, dataset\9510.jpg, dataset\9529.jpg, dataset\9530.jpg"
+9,80,"dataset\9514.jpg, dataset\9588.jpg, dataset\9593.jpg, dataset\9594.jpg, dataset\9596.jpg"
