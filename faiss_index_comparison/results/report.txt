@@ -1,0 +1,26 @@
+FAISS INDEX COMPARISON REPORT
+
+
+Index Type: Flat
+Search Time: 0.0 ms
+Memory Usage: 3.28 MB
+Accuracy: 100.0 %
+
+
+Index Type: IVF
+Search Time: 0.1613 ms
+Memory Usage: 3.31 MB
+Accuracy: 100.0 %
+
+
+Index Type: HNSW
+Search Time: 0.0 ms
+Memory Usage: 3.57 MB
+Accuracy: 99.0 %
+
+
+Index Type: PQ
+Search Time: 0.2043 ms
+Memory Usage: 0.05 MB
+Accuracy: 30.0 %
+
