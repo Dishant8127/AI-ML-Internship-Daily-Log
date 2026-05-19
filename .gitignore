@@ -14,8 +14,8 @@ requirements.txt
 qa_app/sessions.json
 session_id.txt
 
-data/
 
+faiss_index_comparison/data
 data.txt
 
 image-similarity-search/images
