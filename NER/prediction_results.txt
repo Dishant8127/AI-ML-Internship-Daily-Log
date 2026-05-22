@@ -1,0 +1,3 @@
+{'entity_group': 'PER', 'score': np.float32(0.99914706), 'word': 'Sundar Pichai', 'start': 0, 'end': 13}
+{'entity_group': 'ORG', 'score': np.float32(0.9981477), 'word': 'Google', 'start': 28, 'end': 34}
+{'entity_group': 'LOC', 'score': np.float32(0.9978599), 'word': 'California', 'start': 38, 'end': 48}
