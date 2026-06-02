@@ -1,49 +1,41 @@
 from flask import Flask, request, jsonify
-from models import embedding_model, llm, index
 
+from models import retriever, llm
 
 app = Flask(__name__)
-
 
 
 @app.route("/ask", methods=["POST"])
 def ask():
 
-    data = request.json
-    query = data["question"]
+    data = request.get_json()
 
-    query_embedding = embedding_model.encode(
-        query
-    ).tolist()
+    question = data["question"]
 
-    result = index.query(
-        vector=query_embedding,
-        top_k=3,
-        include_metadata=True
+    docs = retriever.invoke(question)
+
+    context = "\n".join(
+        [doc.page_content for doc in docs]
     )
 
-    context = ""
-
-    for match in result["matches"]:
-        context += match["metadata"]["text"] + "\n"
-
     prompt = f"""
+    Answer only using the context below.
+
     Context:
     {context}
 
     Question:
-    {query}
-
-    Answer based only on context.
+    {question}
     """
 
-    response = llm.generate_content(prompt)
+    response = llm.invoke(prompt)
 
     return jsonify({
-        "question": query,
+        "question": question,
         "context": context,
-        "answer": response.text
+        "answer": response.content
     })
+
 
 if __name__ == "__main__":
     app.run(debug=True)
