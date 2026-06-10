@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Legal Contract RAG</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+
+            <div class="card shadow">
+
+                <div class="card-header text-center">
+
+                    <h2>
+                        Legal Contract RAG
+                    </h2>
+
+                    <p class="mb-0">
+                        Langfuse + RAGAS + NVIDIA AI
+                    </p>
+
+                </div>
+
+                <div class="card-body">
+
+                    <!-- ================================= -->
+                    <!-- Upload Contract -->
+                    <!-- ================================= -->
+
+                    <h4>
+                        Upload Contract
+                    </h4>
+
+                    <form id="uploadForm"
+                          enctype="multipart/form-data">
+
+                        <input
+                            type="file"
+                            class="form-control"
+                            name="pdf"
+                            id="pdf"
+                            accept=".pdf"
+                            required>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary mt-3">
+
+                            Upload Contract
+
+                        </button>
+
+                    </form>
+
+                    <div
+                        id="uploadResult"
+                        class="mt-3">
+                    </div>
+
+                    <hr>
+
+                    <!-- ================================= -->
+                    <!-- Ask Question -->
+                    <!-- ================================= -->
+
+                    <h4>
+                        Ask Question
+                    </h4>
+
+                    <form id="questionForm">
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="question"
+                            placeholder="Ask something from the contract..."
+                            required>
+
+                        <button
+                            type="submit"
+                            class="btn btn-success mt-3">
+
+                            Ask Question
+
+                        </button>
+
+                    </form>
+
+                    <hr>
+
+                    <!-- ================================= -->
+                    <!-- Answer -->
+                    <!-- ================================= -->
+
+                    <div id="answerSection"
+                         style="display:none;">
+
+                        <h4>
+                            Answer
+                        </h4>
+
+                        <div class="alert alert-info">
+
+                            <span id="answerText"></span>
+
+                        </div>
+
+                        <h5>
+                            Latency
+                        </h5>
+
+                        <div class="alert alert-secondary">
+
+                            <span id="latency"></span>
+
+                        </div>
+
+                        <h5>
+                            RAGAS Scores
+                        </h5>
+
+                        <table class="table table-bordered">
+
+                            <thead>
+
+                            <tr>
+
+                                <th>Metric</th>
+
+                                <th>Score</th>
+
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                            <tr>
+
+                                <td>Faithfulness</td>
+
+                                <td id="faithfulness"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Answer Relevancy</td>
+
+                                <td id="answer_relevancy"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Context Precision</td>
+
+                                <td id="context_precision"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Context Recall</td>
+
+                                <td id="context_recall"></td>
+
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    // =====================================
+    // Upload Contract
+    // =====================================
+
+    document
+        .getElementById("uploadForm")
+        .addEventListener(
+            "submit",
+            async function (e)
+            {
+
+                e.preventDefault();
+
+                let formData = new FormData();
+
+                formData.append(
+                    "pdf",
+                    document.getElementById("pdf").files[0]
+                );
+
+                let response = await fetch(
+                    "/upload",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+                let data = await response.json();
+
+                document.getElementById(
+                    "uploadResult"
+                ).innerHTML =
+
+                    `<div class="alert alert-success">
+                        ${data.message}
+                     </div>`;
+            }
+        );
+
+
+
+    // =====================================
+    // Ask Question
+    // =====================================
+
+    document
+        .getElementById("questionForm")
+        .addEventListener(
+            "submit",
+            async function (e)
+            {
+
+                e.preventDefault();
+
+                let formData = new FormData();
+
+                formData.append(
+                    "question",
+                    document.getElementById("question").value
+                );
+
+                let response = await fetch(
+                    "/ask",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+                let data = await response.json();
+
+                document.getElementById(
+                    "answerSection"
+                ).style.display = "block";
+
+                document.getElementById(
+                    "answerText"
+                ).innerText = data.answer;
+
+                document.getElementById(
+                    "latency"
+                ).innerText =
+                    data.latency + " seconds";
+
+                document.getElementById(
+                    "faithfulness"
+                ).innerText =
+                    data.ragas_scores.faithfulness;
+
+                document.getElementById(
+                    "answer_relevancy"
+                ).innerText =
+                    data.ragas_scores.answer_relevancy;
+
+                document.getElementById(
+                    "context_precision"
+                ).innerText =
+                    data.ragas_scores.context_precision;
+
+                document.getElementById(
+                    "context_recall"
+                ).innerText =
+                    data.ragas_scores.context_recall;
+
+            }
+        );
+
+</script>
+
+</body>
+</html>
