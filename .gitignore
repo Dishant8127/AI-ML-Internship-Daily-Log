@@ -9,7 +9,7 @@ __pycache__/
 
 abc.py
 venv/
-requirements.txt
+
 
 qa_app/sessions.json
 session_id.txt
