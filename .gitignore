@@ -27,3 +27,4 @@ image-similarity/styles.csv
 image_clustering/dataset
 
 rags_env/
+ragas_env/
