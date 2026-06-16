@@ -1,0 +1,8 @@
+streamlit
+langchain
+langchain-community
+langchain-chroma
+langchain-nvidia-ai-endpoints
+chromadb
+pypdf
+python-dotenv
