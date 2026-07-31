@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Similarity Search</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="card shadow-lg p-5">
+
+        <h1 class="text-center mb-3">
+
+            Image Similarity Search
+
+        </h1>
+
+        <p class="text-center text-muted">
+
+            Upload an image and retrieve the most similar fashion products.
+
+        </p>
+
+        <form action="/search"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <div class="mb-4">
+
+                <input
+
+                    class="form-control"
+
+                    type="file"
+
+                    name="image"
+
+                    accept="image/*"
+
+                    required>
+
+            </div>
+
+            <div class="text-center">
+
+                <button class="btn btn-primary btn-lg">
+
+                    Find Similar Images
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
