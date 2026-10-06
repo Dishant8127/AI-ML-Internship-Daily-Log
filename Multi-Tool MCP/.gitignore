@@ -1,0 +1,15 @@
+# secrets & local config
+.env
+
+# virtualenv
+.venv/
+venv/
+
+# runtime
+logs/*.log
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
