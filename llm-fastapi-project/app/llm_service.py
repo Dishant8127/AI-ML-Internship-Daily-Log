@@ -1,16 +1,22 @@
 
 import os
+import threading
+
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 BASE_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
+MODEL_LABEL = "Qwen2.5-1.5B-Instruct + LoRA"
 ADAPTER_PATH = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "models", "final_adapter")
 )
 
 tokenizer = None
 model = None
+
+# Guards lazy loading so concurrent requests cannot load the model twice.
+_load_lock = threading.Lock()
 
 
 def load_model():
@@ -19,30 +25,35 @@ def load_model():
     if model is not None:
         return tokenizer, model
 
-    print("Loading tokenizer...")
-    tokenizer = AutoTokenizer.from_pretrained(
-        ADAPTER_PATH,
-        local_files_only=True
-    )
+    with _load_lock:
+        # Another thread may have finished loading while we waited for the lock.
+        if model is not None:
+            return tokenizer, model
 
-    print("Loading base model on CPU...")
-    base_model = AutoModelForCausalLM.from_pretrained(
-        BASE_MODEL,
-        torch_dtype=torch.float32,
-        low_cpu_mem_usage=True,
-    )
+        print("Loading tokenizer...")
+        tokenizer = AutoTokenizer.from_pretrained(
+            ADAPTER_PATH,
+            local_files_only=True
+        )
 
-    print("Loading fine-tuned LoRA adapter...")
-    model = PeftModel.from_pretrained(
-        base_model,
-        ADAPTER_PATH,
-        is_trainable=False,
-    )
+        print("Loading base model on CPU...")
+        base_model = AutoModelForCausalLM.from_pretrained(
+            BASE_MODEL,
+            dtype=torch.float32,
+            low_cpu_mem_usage=True,
+        )
 
-    model.eval()
-    print("Model loaded successfully.")
+        print("Loading fine-tuned LoRA adapter...")
+        model = PeftModel.from_pretrained(
+            base_model,
+            ADAPTER_PATH,
+            is_trainable=False,
+        )
 
-    return tokenizer, model
+        model.eval()
+        print("Model loaded successfully.")
+
+        return tokenizer, model
 
 
 

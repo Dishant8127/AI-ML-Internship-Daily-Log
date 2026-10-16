@@ -1,0 +1,9 @@
+$ curl -X POST http://127.0.0.1:8000/api/chat -H Content-Type: application/json -d {"message":"Explain the difference between GET and POST requests.","max_new_tokens":96}
+
+HTTP/1.1 200 OK
+date: Fri, 16 Oct 2026 05:47:01 GMT
+server: uvicorn
+content-length: 100
+content-type: application/json
+
+{"reply":"GET requests retrieve data from the server, while POST requests send data to the server."}

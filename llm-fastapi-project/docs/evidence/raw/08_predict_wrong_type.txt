@@ -1,0 +1,9 @@
+$ curl -X POST http://127.0.0.1:8000/predict -H Content-Type: application/json -d {"question":123}
+
+HTTP/1.1 422 Unprocessable Entity
+date: Fri, 16 Oct 2026 05:48:20 GMT
+server: uvicorn
+content-length: 112
+content-type: application/json
+
+{"detail":[{"type":"string_type","loc":["body","question"],"msg":"Input should be a valid string","input":123}]}

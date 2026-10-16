@@ -1,0 +1,142 @@
+[
+  {
+    "n": 1,
+    "question": "What is an SQL JOIN?",
+    "status": 200,
+    "latency_sec": 78.01,
+    "answer": "An SQL JOIN combines rows from two or more tables based on a related column between them."
+  },
+  {
+    "n": 2,
+    "question": "What is exception handling in Python?",
+    "status": 200,
+    "latency_sec": 68.0,
+    "answer": "Exception handling allows you to handle errors that occur during the execution of your code."
+  },
+  {
+    "n": 3,
+    "question": "What is the difference between PUT and PATCH?",
+    "status": 200,
+    "latency_sec": 83.24,
+    "answer": "PUT replaces the entire resource with the data in the request body. PATCH updates only the fields that have changed."
+  },
+  {
+    "n": 4,
+    "question": "What is the difference between authentication and authorization?",
+    "status": 200,
+    "latency_sec": 93.63,
+    "answer": "Authentication verifies that a user is who they claim to be. Authorization determines what actions a user can perform."
+  },
+  {
+    "n": 5,
+    "question": "What does HTTP status code 200 mean?",
+    "status": 200,
+    "latency_sec": 58.55,
+    "answer": "HTTP status code 200 means the request was successful."
+  },
+  {
+    "n": 6,
+    "question": "What is JSON?",
+    "status": 200,
+    "latency_sec": 64.68,
+    "answer": "JSON is a data format that uses key-value pairs to represent data."
+  },
+  {
+    "n": 7,
+    "question": "What does HTTP status code 404 mean?",
+    "status": 200,
+    "latency_sec": 74.54,
+    "answer": "HTTP status code 404 means that the requested resource could not be found."
+  },
+  {
+    "n": 8,
+    "question": "What is supervised learning?",
+    "status": 200,
+    "latency_sec": 111.56,
+    "answer": "Supervised learning is a machine learning method where the model learns from labeled training data to make predictions on new, unseen data."
+  },
+  {
+    "n": 9,
+    "question": "What is precision in machine learning?",
+    "status": 200,
+    "latency_sec": 65.49,
+    "answer": "Precision is the fraction of relevant items that are correctly identified as such."
+  },
+  {
+    "n": 10,
+    "question": "What is inheritance in Python?",
+    "status": 200,
+    "latency_sec": 61.74,
+    "answer": "Inheritance allows a class to inherit properties and methods from another class."
+  },
+  {
+    "n": 11,
+    "question": "What is FastAPI?",
+    "status": 200,
+    "latency_sec": 134.95,
+    "answer": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints."
+  },
+  {
+    "n": 12,
+    "question": "What does GROUP BY do in SQL?",
+    "status": 200,
+    "latency_sec": 78.95,
+    "answer": "GROUP BY groups rows that have the same values in one or more columns into groups."
+  },
+  {
+    "n": 13,
+    "question": "What is a Python list?",
+    "status": 200,
+    "latency_sec": 73.43,
+    "answer": "A list is an ordered collection of items that can be accessed using an index."
+  },
+  {
+    "n": 14,
+    "question": "What is a train-test split?",
+    "status": 200,
+    "latency_sec": 75.31,
+    "answer": "A train-test split is a method of splitting data into training and testing sets."
+  },
+  {
+    "n": 15,
+    "question": "What is a Python decorator?",
+    "status": 200,
+    "latency_sec": 98.69,
+    "answer": "A decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it."
+  },
+  {
+    "n": 16,
+    "question": "What is the difference between GET and POST?",
+    "status": 200,
+    "latency_sec": 98.86,
+    "answer": "GET requests are used to retrieve data from the server, while POST requests are used to send data to the server."
+  },
+  {
+    "n": 17,
+    "question": "What is a Python tuple?",
+    "status": 200,
+    "latency_sec": 41.43,
+    "answer": "A tuple is an immutable sequence of elements."
+  },
+  {
+    "n": 18,
+    "question": "What is a SQL transaction?",
+    "status": 200,
+    "latency_sec": 79.19,
+    "answer": "A SQL transaction is a set of related SQL statements that must be executed as a unit."
+  },
+  {
+    "n": 19,
+    "question": "What is a primary key?",
+    "status": 200,
+    "latency_sec": 50.64,
+    "answer": "A primary key uniquely identifies each row in a table."
+  },
+  {
+    "n": 20,
+    "question": "What is a Python dictionary?",
+    "status": 200,
+    "latency_sec": 54.71,
+    "answer": "A Python dictionary is an unordered collection of key-value pairs."
+  }
+]

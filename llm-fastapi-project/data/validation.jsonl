@@ -1,0 +1,6 @@
+{"instruction": "What is an API endpoint?", "input": "", "output": "An API endpoint is a specific URL and HTTP method through which a client accesses an API operation."}
+{"instruction": "What is a Python generator?", "input": "", "output": "A generator produces values lazily, commonly using yield, instead of creating all results at once."}
+{"instruction": "What is a Python function?", "input": "", "output": "A function is a reusable block of code defined with def that can accept arguments and return a result."}
+{"instruction": "What is a database index?", "input": "", "output": "An index can speed up data retrieval, but it requires storage and can add overhead to data modifications."}
+{"instruction": "What is an INNER JOIN?", "input": "", "output": "An INNER JOIN returns rows that satisfy the join condition in both tables."}
+{"instruction": "What is Docker?", "input": "", "output": "Docker packages an application and its dependencies into containers to help it run consistently across environments."}

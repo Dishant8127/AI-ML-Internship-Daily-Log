@@ -1,0 +1,62 @@
+INFO:     Started server process [8076]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60895 - "GET / HTTP/1.1" 200 OK
+2026-10-16 11:15:03,522 INFO httpx2: HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+Loading tokenizer...
+Loading base model on CPU...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   4%|3         | 12/338 [00:00<00:03, 88.12it/s]Loading weights:   7%|7         | 24/338 [00:00<00:03, 83.42it/s]Loading weights:  10%|9         | 33/338 [00:00<00:05, 55.72it/s]Loading weights:  12%|#1        | 40/338 [00:00<00:05, 56.39it/s]Loading weights:  14%|#3        | 47/338 [00:00<00:07, 39.82it/s]Loading weights:  16%|#6        | 55/338 [00:01<00:06, 44.36it/s]Loading weights:  18%|#8        | 61/338 [00:01<00:07, 36.55it/s]Loading weights:  20%|##        | 69/338 [00:01<00:06, 44.25it/s]Loading weights:  22%|##2       | 75/338 [00:01<00:06, 43.67it/s]Loading weights:  24%|##3       | 80/338 [00:01<00:05, 43.71it/s]Loading weights:  25%|##5       | 85/338 [00:01<00:06, 36.59it/s]Loading weights:  28%|##8       | 95/338 [00:02<00:06, 37.60it/s]Loading weights:  30%|##9       | 100/338 [00:02<00:07, 31.87it/s]Loading weights:  31%|###       | 104/338 [00:02<00:07, 32.94it/s]Loading weights:  32%|###1      | 108/338 [00:02<00:06, 33.48it/s]Loading weights:  33%|###3      | 112/338 [00:02<00:06, 34.53it/s]Loading weights:  35%|###5      | 119/338 [00:02<00:07, 29.86it/s]Loading weights:  38%|###8      | 130/338 [00:03<00:04, 43.86it/s]Loading weights:  40%|####      | 136/338 [00:03<00:05, 38.40it/s]Loading weights:  42%|####1     | 141/338 [00:03<00:08, 22.20it/s]Loading weights:  45%|####5     | 153/338 [00:04<00:05, 31.07it/s]Loading weights:  47%|####6     | 158/338 [00:04<00:07, 23.50it/s]Loading weights:  49%|####9     | 166/338 [00:04<00:08, 20.96it/s]Loading weights:  50%|#####     | 169/338 [00:05<00:08, 20.08it/s]Loading weights:  52%|#####2    | 176/338 [00:05<00:06, 25.84it/s]Loading weights:  53%|#####3    | 180/338 [00:05<00:10, 15.69it/s]Loading weights:  54%|#####4    | 183/338 [00:06<00:09, 16.12it/s]Loading weights:  55%|#####5    | 186/338 [00:06<00:09, 15.33it/s]Loading weights:  59%|#####9    | 201/338 [00:06<00:06, 21.87it/s]Loading weights:  63%|######2   | 212/338 [00:06<00:04, 28.87it/s]Loading weights:  64%|######3   | 216/338 [00:07<00:04, 29.59it/s]Loading weights:  65%|######5   | 221/338 [00:07<00:05, 21.48it/s]Loading weights:  67%|######6   | 225/338 [00:07<00:05, 22.17it/s]Loading weights:  69%|######8   | 232/338 [00:07<00:03, 28.32it/s]Loading weights:  70%|######9   | 236/338 [00:08<00:06, 16.76it/s]Loading weights:  74%|#######3  | 249/338 [00:08<00:03, 29.25it/s]Loading weights:  75%|#######5  | 255/338 [00:08<00:03, 27.30it/s]Loading weights:  77%|#######7  | 261/338 [00:09<00:03, 22.15it/s]Loading weights:  79%|#######8  | 266/338 [00:09<00:02, 25.03it/s]Loading weights:  81%|########  | 273/338 [00:09<00:02, 27.29it/s]Loading weights:  82%|########1 | 277/338 [00:09<00:03, 19.85it/s]Loading weights:  83%|########3 | 281/338 [00:09<00:02, 21.91it/s]Loading weights:  84%|########4 | 284/338 [00:10<00:03, 15.70it/s]Loading weights:  88%|########8 | 298/338 [00:10<00:01, 20.54it/s]Loading weights:  92%|#########2| 311/338 [00:11<00:01, 21.83it/s]Loading weights:  95%|#########4| 321/338 [00:11<00:00, 25.85it/s]Loading weights:  96%|#########5| 324/338 [00:12<00:00, 20.94it/s]Loading weights: 100%|##########| 338/338 [00:12<00:00, 27.80it/s]
+2026-10-16 11:17:00,935 INFO app.main: Prediction completed in 118.44 seconds
+Loading fine-tuned LoRA adapter...
+Model loaded successfully.
+INFO:     127.0.0.1:60896 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:18:20,768 INFO app.main: Chat completed in 79.38 seconds
+INFO:     127.0.0.1:65438 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50866 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:50867 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:50868 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:50869 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:50871 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:50872 - "GET /does-not-exist HTTP/1.1" 404 Not Found
+2026-10-16 11:19:40,893 INFO app.main: Prediction completed in 77.86 seconds
+INFO:     127.0.0.1:50873 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:20:48,897 INFO app.main: Prediction completed in 67.86 seconds
+INFO:     127.0.0.1:57921 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:22:12,143 INFO app.main: Prediction completed in 83.08 seconds
+INFO:     127.0.0.1:51973 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:23:45,763 INFO app.main: Prediction completed in 93.49 seconds
+INFO:     127.0.0.1:65115 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:24:44,335 INFO app.main: Prediction completed in 58.40 seconds
+INFO:     127.0.0.1:65198 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:25:49,026 INFO app.main: Prediction completed in 64.55 seconds
+INFO:     127.0.0.1:65199 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:27:03,558 INFO app.main: Prediction completed in 74.39 seconds
+INFO:     127.0.0.1:56123 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:28:55,126 INFO app.main: Prediction completed in 111.41 seconds
+INFO:     127.0.0.1:64885 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:30:00,620 INFO app.main: Prediction completed in 65.35 seconds
+INFO:     127.0.0.1:64888 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:31:02,372 INFO app.main: Prediction completed in 61.61 seconds
+INFO:     127.0.0.1:49930 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:33:17,343 INFO app.main: Prediction completed in 134.84 seconds
+INFO:     127.0.0.1:53963 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:34:36,312 INFO app.main: Prediction completed in 78.84 seconds
+INFO:     127.0.0.1:52088 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:35:49,725 INFO app.main: Prediction completed in 73.31 seconds
+INFO:     127.0.0.1:52090 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:37:05,020 INFO app.main: Prediction completed in 75.17 seconds
+INFO:     127.0.0.1:52095 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:38:43,728 INFO app.main: Prediction completed in 98.56 seconds
+INFO:     127.0.0.1:65318 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:40:22,582 INFO app.main: Prediction completed in 98.72 seconds
+INFO:     127.0.0.1:59044 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:41:04,057 INFO app.main: Prediction completed in 41.33 seconds
+INFO:     127.0.0.1:56397 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:42:23,257 INFO app.main: Prediction completed in 79.09 seconds
+INFO:     127.0.0.1:58904 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:43:13,899 INFO app.main: Prediction completed in 50.54 seconds
+INFO:     127.0.0.1:58905 - "POST /predict HTTP/1.1" 200 OK
+2026-10-16 11:44:08,615 INFO app.main: Prediction completed in 54.61 seconds
+INFO:     127.0.0.1:51876 - "POST /predict HTTP/1.1" 200 OK

@@ -1,0 +1,9 @@
+$ curl -X POST http://127.0.0.1:8000/predict -H Content-Type: application/json -d {"question":"What is a Python decorator?"}
+
+HTTP/1.1 200 OK
+date: Fri, 16 Oct 2026 05:45:01 GMT
+server: uvicorn
+content-length: 227
+content-type: application/json
+
+{"question":"What is a Python decorator?","answer":"A decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it.","model":"Qwen2.5-1.5B-Instruct + LoRA"}

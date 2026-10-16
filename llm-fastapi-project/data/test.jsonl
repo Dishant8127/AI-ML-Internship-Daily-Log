@@ -1,0 +1,6 @@
+{"instruction": "What is an SQL JOIN?", "input": "", "output": "A JOIN combines rows from two or more tables using a related column or join condition."}
+{"instruction": "What is exception handling in Python?", "input": "", "output": "Exception handling uses try and except blocks to handle runtime errors. A finally block can run cleanup code."}
+{"instruction": "What is the difference between PUT and PATCH?", "input": "", "output": "PUT generally replaces a resource representation, while PATCH applies partial modifications to a resource."}
+{"instruction": "What is the difference between authentication and authorization?", "input": "", "output": "Authentication verifies who a user is. Authorization determines what that user is allowed to access or do."}
+{"instruction": "What does HTTP status code 200 mean?", "input": "", "output": "HTTP 200 OK indicates that the request succeeded."}
+{"instruction": "What is JSON?", "input": "", "output": "JSON is a text-based data format that represents structured data using objects, arrays, strings, numbers, booleans, and null."}

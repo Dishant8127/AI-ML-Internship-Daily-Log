@@ -1,0 +1,34 @@
+== single-request evidence ==
+captured 01_health_check.txt
+captured 02_root_endpoint.txt
+captured 03_predict_valid.txt
+captured 04_chat_valid.txt
+captured 05_predict_empty_question.txt
+captured 06_predict_whitespace.txt
+captured 07_predict_missing_field.txt
+captured 08_predict_wrong_type.txt
+captured 09_predict_too_long.txt
+captured 10_unknown_route.txt
+== 20-request batch (representative questions) ==
+ 1  HTTP 200    78.0s  What is an SQL JOIN?
+ 2  HTTP 200    68.0s  What is exception handling in Python?
+ 3  HTTP 200    83.2s  What is the difference between PUT and PATCH?
+ 4  HTTP 200    93.6s  What is the difference between authentication and authorization?
+ 5  HTTP 200    58.5s  What does HTTP status code 200 mean?
+ 6  HTTP 200    64.7s  What is JSON?
+ 7  HTTP 200    74.5s  What does HTTP status code 404 mean?
+ 8  HTTP 200   111.6s  What is supervised learning?
+ 9  HTTP 200    65.5s  What is precision in machine learning?
+10  HTTP 200    61.7s  What is inheritance in Python?
+11  HTTP 200   135.0s  What is FastAPI?
+12  HTTP 200    79.0s  What does GROUP BY do in SQL?
+13  HTTP 200    73.4s  What is a Python list?
+14  HTTP 200    75.3s  What is a train-test split?
+15  HTTP 200    98.7s  What is a Python decorator?
+16  HTTP 200    98.9s  What is the difference between GET and POST?
+17  HTTP 200    41.4s  What is a Python tuple?
+18  HTTP 200    79.2s  What is a SQL transaction?
+19  HTTP 200    50.6s  What is a primary key?
+20  HTTP 200    54.7s  What is a Python dictionary?
+batch done: 20 requests
+all evidence captured in /e/AI-ML-Internship-Daily-Log/llm-fastapi-project/docs/evidence/raw

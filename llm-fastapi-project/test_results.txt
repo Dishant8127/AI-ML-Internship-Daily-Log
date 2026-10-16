@@ -1,0 +1,19 @@
+[PASS] /health returns 200  -> {'status': 'ok'}
+[PASS] /health status ok  -> {'status': 'ok'}
+[PASS] / returns 200  -> {'message': 'Qwen2.5-1.5B + LoRA FastAPI server is running'}
+[PASS] /predict valid returns 200  -> 200
+[PASS] /predict response shape  -> ['question', 'answer', 'model']
+[PASS] /predict answer non-empty
+     answer: A decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it.
+[PASS] /api/chat valid returns 200  -> 200
+[PASS] /api/chat reply non-empty
+[PASS] /predict empty question -> 422  -> 422
+[PASS] /predict whitespace question -> 422  -> 422
+[PASS] /predict missing field -> 422  -> 422
+[PASS] /predict over-long question -> 422  -> 422
+[PASS] /predict wrong type -> 422  -> 422
+[PASS] /api/chat empty message -> 422  -> 422
+[PASS] /unknown route -> 404  -> 404
+
+15/15 checks passed
+EXIT=0

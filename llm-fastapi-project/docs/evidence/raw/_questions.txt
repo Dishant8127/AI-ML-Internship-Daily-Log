@@ -1,0 +1,20 @@
+What is an SQL JOIN?
+What is exception handling in Python?
+What is the difference between PUT and PATCH?
+What is the difference between authentication and authorization?
+What does HTTP status code 200 mean?
+What is JSON?
+What does HTTP status code 404 mean?
+What is supervised learning?
+What is precision in machine learning?
+What is inheritance in Python?
+What is FastAPI?
+What does GROUP BY do in SQL?
+What is a Python list?
+What is a train-test split?
+What is a Python decorator?
+What is the difference between GET and POST?
+What is a Python tuple?
+What is a SQL transaction?
+What is a primary key?
+What is a Python dictionary?

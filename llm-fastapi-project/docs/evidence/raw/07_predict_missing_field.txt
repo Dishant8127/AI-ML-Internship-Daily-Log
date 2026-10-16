@@ -1,0 +1,9 @@
+$ curl -X POST http://127.0.0.1:8000/predict -H Content-Type: application/json -d {}
+
+HTTP/1.1 422 Unprocessable Entity
+date: Fri, 16 Oct 2026 05:48:20 GMT
+server: uvicorn
+content-length: 91
+content-type: application/json
+
+{"detail":[{"type":"missing","loc":["body","question"],"msg":"Field required","input":{}}]}
