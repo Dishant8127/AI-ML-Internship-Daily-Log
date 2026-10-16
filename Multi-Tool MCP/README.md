@@ -1,4 +1,4 @@
-# Day 4 - Multi-Tool MCP AI Assistant
+# Multi-Tool MCP AI Assistant
 
 An MCP-based AI assistant that connects **multiple MCP servers** (Calculator, File System,
 PostgreSQL) to one LLM agent. You ask in natural language; the LLM decides which tools to
